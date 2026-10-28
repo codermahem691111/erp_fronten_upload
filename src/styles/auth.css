@@ -1,0 +1,1245 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/* =========================================
+   UNIFLOW — LIGHT PROFESSIONAL DESIGN SYSTEM
+   White / Indigo / Lavender / Mint
+========================================= */
+
+:root {
+  --uf-primary: #5146e5;
+  --uf-primary-dark: #4035c8;
+  --uf-primary-soft: #f0efff;
+  --uf-primary-border: #dedbff;
+
+  --uf-mint: #d8f8e5;
+  --uf-mint-strong: #a8efc3;
+
+  --uf-ink: #201d35;
+  --uf-heading: #211d3b;
+  --uf-muted: #77758c;
+  --uf-muted-light: #9996aa;
+
+  --uf-white: #ffffff;
+  --uf-page: #fbfaff;
+  --uf-surface: #ffffff;
+  --uf-surface-soft: #f8f7ff;
+  --uf-border: #eae8f3;
+  --uf-border-strong: #dcd8eb;
+
+  --uf-success: #16865b;
+  --uf-danger: #dc4563;
+
+  --uf-radius-sm: 9px;
+  --uf-radius-md: 13px;
+  --uf-radius-lg: 19px;
+
+  --uf-shadow-card:
+    0 24px 70px rgba(55, 43, 115, 0.07),
+    0 3px 12px rgba(55, 43, 115, 0.035);
+}
+
+/* =========================================
+   GLOBAL
+========================================= */
+
+.uf-auth,
+.uf-auth * {
+  box-sizing: border-box;
+}
+
+.uf-auth {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(420px, 0.98fr);
+  background: var(--uf-page);
+  color: var(--uf-ink);
+  font-family: 'DM Sans', sans-serif;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.uf-auth button,
+.uf-auth input,
+.uf-auth select,
+.uf-auth textarea {
+  font: inherit;
+}
+
+.uf-auth button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================
+   LEFT SHOWCASE
+========================================= */
+
+.uf-showcase {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 38px clamp(28px, 4.7vw, 70px) 25px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 10% 95%,
+      rgba(168, 239, 195, 0.25),
+      transparent 37%
+    ),
+    radial-gradient(
+      ellipse at 100% 0%,
+      rgba(205, 199, 255, 0.28),
+      transparent 38%
+    ),
+    #ffffff;
+  color: var(--uf-ink);
+}
+
+.uf-showcase::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.4;
+  background-image: radial-gradient(
+    rgba(81, 70, 229, 0.11) 0.8px,
+    transparent 0.8px
+  );
+  background-size: 24px 24px;
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    transparent 80%
+  );
+}
+
+.uf-showcase::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 14%;
+  right: -155px;
+  width: 390px;
+  height: 390px;
+  border: 1px solid rgba(81, 70, 229, 0.09);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 36px rgba(81, 70, 229, 0.025),
+    0 0 0 75px rgba(81, 70, 229, 0.025);
+  pointer-events: none;
+}
+
+.uf-orb {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.uf-orb--one {
+  top: 7%;
+  right: 12%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(
+    circle,
+    rgba(216, 248, 229, 0.65),
+    transparent 72%
+  );
+}
+
+.uf-orb--two {
+  left: -140px;
+  bottom: 7%;
+  width: 290px;
+  height: 290px;
+  background: radial-gradient(
+    circle,
+    rgba(218, 213, 255, 0.35),
+    transparent 72%
+  );
+}
+
+/* =========================================
+   BRAND
+========================================= */
+
+.uf-brand {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.uf-brand__symbol {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(81, 70, 229, 0.08);
+  border-radius: 14px;
+  background: linear-gradient(145deg, #6257f2, #473bd3);
+  color: #ffffff;
+  box-shadow: 0 7px 18px rgba(81, 70, 229, 0.18);
+}
+
+.uf-brand__symbol svg {
+  width: 31px;
+  height: 31px;
+}
+
+.uf-brand__name {
+  color: var(--uf-heading);
+  font-family: 'Manrope', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -1.1px;
+}
+
+.uf-brand__edition {
+  align-self: center;
+  margin-left: 3px;
+  padding: 5px 8px;
+  border: 1px solid var(--uf-primary-border);
+  border-radius: 6px;
+  background: var(--uf-primary-soft);
+  color: var(--uf-primary);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+}
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.uf-hero {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 530px;
+  margin-top: clamp(48px, 7vh, 82px);
+}
+
+.uf-eyebrow,
+.uf-auth-kicker {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--uf-primary);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.uf-status-dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #36b878;
+  box-shadow: 0 0 0 4px rgba(54, 184, 120, 0.12);
+}
+
+.uf-hero h1 {
+  margin: 25px 0 18px;
+  color: var(--uf-heading);
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(45px, 4.7vw, 72px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -3.8px;
+}
+
+.uf-hero h1 span {
+  position: relative;
+  display: inline-block;
+  color: var(--uf-primary);
+}
+
+.uf-hero h1 span::after {
+  content: '';
+  position: absolute;
+  right: 2px;
+  bottom: 1px;
+  left: 2px;
+  z-index: -1;
+  height: 12px;
+  border-radius: 5px;
+  background: var(--uf-mint);
+}
+
+.uf-hero__description {
+  max-width: 420px;
+  margin: 0;
+  color: var(--uf-muted);
+  font-size: 14px;
+  line-height: 1.95;
+}
+
+/* =========================================
+   FEATURE LIST
+========================================= */
+
+.uf-benefits {
+  display: grid;
+  gap: 19px;
+  margin-top: 31px;
+}
+
+.uf-benefit {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.uf-benefit__icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #e5e2ff;
+  border-radius: 13px;
+  background: linear-gradient(145deg, #f4f2ff, #eeecff);
+  color: var(--uf-primary);
+  font-size: 20px;
+  transition:
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+.uf-benefit:hover .uf-benefit__icon {
+  transform: translateY(-2px);
+  background: var(--uf-mint);
+}
+
+.uf-benefit strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #302b46;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.uf-benefit p {
+  margin: 0;
+  color: #858196;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+/* =========================================
+   DASHBOARD PREVIEW
+========================================= */
+
+.uf-preview {
+  position: relative;
+  z-index: 1;
+  align-self: flex-end;
+  width: 100%;
+  max-width: 440px;
+  margin-top: auto;
+  padding: 22px;
+  border: 1px solid rgba(225, 222, 241, 0.95);
+  border-radius: 19px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow:
+    0 18px 55px rgba(54, 43, 113, 0.07),
+    0 3px 10px rgba(54, 43, 113, 0.025);
+  backdrop-filter: blur(14px);
+}
+
+.uf-preview__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.uf-preview__caption {
+  color: #8b85a0;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.uf-preview__top h3 {
+  margin: 8px 0 0;
+  color: var(--uf-heading);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.uf-preview__live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 9px;
+  border: 1px solid #c9f1d8;
+  border-radius: 7px;
+  background: #f0fff5;
+  color: #16865b;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+.uf-preview__live span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #28b879;
+}
+
+.uf-preview__metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 21px;
+}
+
+.uf-metric {
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid #eeebf7;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #ffffff, #faf9ff);
+}
+
+.uf-metric > span {
+  display: block;
+  color: #89849a;
+  font-size: 10px;
+}
+
+.uf-metric strong {
+  display: block;
+  margin-top: 8px;
+  color: #302b46;
+  font-size: 12px;
+}
+
+.uf-progress {
+  height: 5px;
+  margin-top: 12px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #eeecf6;
+}
+
+.uf-progress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #6e63f2, #9b91ff);
+}
+
+.uf-metric:nth-child(2) .uf-progress span {
+  background: linear-gradient(90deg, #38b77a, #8de5b1);
+}
+
+.uf-preview__bottom {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid #f0edf7;
+  color: #777189;
+  font-size: 10px;
+}
+
+.uf-preview__sparkle {
+  color: var(--uf-primary);
+  font-size: 17px;
+}
+
+.uf-preview__arrow {
+  margin-left: auto;
+  color: var(--uf-primary);
+  font-size: 17px;
+}
+
+/* =========================================
+   FOOTERS
+========================================= */
+
+.uf-showcase__footer,
+.uf-auth-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 25px;
+  color: #9a95a8;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.9px;
+}
+
+/* =========================================
+   RIGHT AUTHENTICATION AREA
+========================================= */
+
+.uf-auth-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 100vh;
+  padding: 31px clamp(24px, 4vw, 62px) 24px;
+  background:
+    radial-gradient(
+      ellipse at 100% 0%,
+      rgba(228, 224, 255, 0.26),
+      transparent 34%
+    ),
+    var(--uf-page);
+}
+
+.uf-auth-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  min-height: 36px;
+}
+
+.uf-mobile-brand {
+  display: none;
+}
+
+.uf-topbar-note {
+  color: #89849b;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+.uf-topbar-link {
+  padding: 10px 14px;
+  border: 1px solid #e0dcf0;
+  border-radius: 10px;
+  background: #ffffff;
+  color: var(--uf-primary);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.uf-topbar-link:hover {
+  transform: translateY(-1px);
+  border-color: #bcb4ff;
+  background: #f7f6ff;
+}
+
+.uf-auth-content {
+  width: 100%;
+  max-width: 440px;
+  margin: auto;
+  padding: 36px 0;
+}
+
+.uf-auth-heading {
+  margin-bottom: 24px;
+}
+
+.uf-auth-kicker {
+  color: #7770c6;
+  font-size: 9px;
+  letter-spacing: 1.6px;
+}
+
+.uf-auth-heading h2 {
+  margin: 15px 0 9px;
+  color: var(--uf-heading);
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(30px, 3vw, 39px);
+  font-weight: 800;
+  letter-spacing: -1.7px;
+  line-height: 1.2;
+}
+
+.uf-auth-heading > p {
+  max-width: 390px;
+  margin: 0;
+  color: var(--uf-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   AUTH CARD & TABS
+========================================= */
+
+.uf-auth-card {
+  padding: 8px;
+  border: 1px solid #e9e6f2;
+  border-radius: 19px;
+  background: #ffffff;
+  box-shadow: var(--uf-shadow-card);
+}
+
+.uf-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  padding: 5px;
+  border: 1px solid #efedf6;
+  border-radius: 12px;
+  background: #f8f7fc;
+}
+
+.uf-tabs__tab {
+  min-width: 0;
+  min-height: 43px;
+  padding: 10px 8px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: transparent;
+  color: #858096;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.uf-tabs__tab:hover {
+  color: var(--uf-primary);
+}
+
+.uf-tabs__tab.is-active {
+  border-color: #e8e4fa;
+  background: #ffffff;
+  color: var(--uf-primary);
+  box-shadow: 0 2px 7px rgba(61, 47, 128, 0.07);
+}
+
+.uf-form-panel {
+  padding: 24px 17px 17px;
+}
+
+/* =========================================
+   FORM FIELDS
+========================================= */
+
+.uf-form-panel form {
+  width: 100%;
+}
+
+.uf-form-panel label {
+  color: #39344e;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.uf-form-panel input:not([type='checkbox']):not([type='radio']),
+.uf-form-panel select,
+.uf-form-panel textarea {
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 14px;
+  border: 1px solid #e4e1ed;
+  border-radius: 10px;
+  outline: none;
+  background: #ffffff;
+  color: var(--uf-ink);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.uf-form-panel input:hover,
+.uf-form-panel select:hover,
+.uf-form-panel textarea:hover {
+  border-color: #cfc9e8;
+}
+
+.uf-form-panel input:focus,
+.uf-form-panel select:focus,
+.uf-form-panel textarea:focus {
+  border-color: var(--uf-primary);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(81, 70, 229, 0.09);
+}
+
+.uf-form-panel input::placeholder,
+.uf-form-panel textarea::placeholder {
+  color: #aaa6b7;
+}
+
+.uf-form-panel input:disabled,
+.uf-form-panel select:disabled,
+.uf-form-panel textarea:disabled {
+  background: #f6f5fa;
+  color: #9994a7;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   PASSWORD INPUT — UNIQUE EYE CONTROL
+
+   Add class="uf-password-field" to the
+   wrapper around the password input/button.
+   Supported button classes:
+   .uf-password-toggle
+   .password-toggle
+   .toggle-password
+========================================= */
+
+.uf-password-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.uf-password-field input,
+.uf-form-panel .uf-password-field input,
+.uf-form-panel .password-wrapper input,
+.uf-form-panel .password-field input {
+  padding-right: 57px;
+}
+
+.uf-password-toggle,
+.uf-form-panel .uf-password-toggle,
+.uf-form-panel .password-toggle,
+.uf-form-panel .toggle-password {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  right: 7px;
+  display: inline-grid;
+  place-items: center;
+  width: 37px;
+  height: 33px;
+  padding: 0;
+  border: 1px solid #e7e3fb;
+  border-radius: 9px;
+  background: #f4f2ff;
+  color: #7064d8;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.uf-password-toggle:hover,
+.uf-form-panel .uf-password-toggle:hover,
+.uf-form-panel .password-toggle:hover,
+.uf-form-panel .toggle-password:hover {
+  border-color: #c9c2ff;
+  background: #e9e6ff;
+  color: #4338ca;
+  box-shadow: 0 3px 9px rgba(81, 70, 229, 0.1);
+}
+
+.uf-password-toggle:active,
+.uf-form-panel .password-toggle:active,
+.uf-form-panel .toggle-password:active {
+  background: #dedaff;
+}
+
+.uf-password-toggle svg,
+.uf-form-panel .password-toggle svg,
+.uf-form-panel .toggle-password svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.uf-password-toggle:focus-visible,
+.uf-form-panel .password-toggle:focus-visible,
+.uf-form-panel .toggle-password:focus-visible {
+  outline: 3px solid rgba(81, 70, 229, 0.25);
+  outline-offset: 2px;
+}
+
+/* If the toggle uses a text or emoji icon */
+.uf-password-toggle span,
+.uf-form-panel .password-toggle span,
+.uf-form-panel .toggle-password span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* =========================================
+   PRIMARY FORM BUTTON
+========================================= */
+
+.uf-form-panel button[type='submit'] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  min-height: 47px;
+  padding: 12px 16px;
+  border: 1px solid var(--uf-primary);
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6257ed, #4c40d8);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 5px 13px rgba(81, 70, 229, 0.15);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.uf-form-panel button[type='submit']:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, #5549df, #4035c8);
+  box-shadow: 0 8px 19px rgba(81, 70, 229, 0.22);
+}
+
+.uf-form-panel button[type='submit']:active {
+  transform: translateY(0);
+}
+
+.uf-form-panel button[type='submit']:disabled {
+  transform: none;
+  opacity: 0.65;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Keep secondary buttons distinct from submit buttons */
+.uf-form-panel button:not([type='submit']):not(
+    .uf-password-toggle
+  ):not(.password-toggle):not(.toggle-password) {
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+/* =========================================
+   SECURITY NOTE
+========================================= */
+
+.uf-security-note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+  padding: 14px 15px;
+  border: 1px solid #e5e9e0;
+  border-radius: 12px;
+  background: linear-gradient(120deg, #ffffff, #f8fff9);
+}
+
+.uf-security-icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #d8f1df;
+  border-radius: 10px;
+  background: #eaf9ef;
+  color: #258252;
+}
+
+.uf-security-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.uf-security-note strong,
+.uf-security-note small {
+  display: block;
+}
+
+.uf-security-note strong {
+  color: #39344b;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.uf-security-note small {
+  margin-top: 4px;
+  color: #8a8795;
+  font-size: 10px;
+}
+
+/* =========================================
+   FOCUS & ACCESSIBILITY
+========================================= */
+
+.uf-auth button:focus-visible {
+  outline: 3px solid rgba(81, 70, 229, 0.28);
+  outline-offset: 3px;
+}
+
+.uf-auth input:focus-visible,
+.uf-auth select:focus-visible,
+.uf-auth textarea:focus-visible {
+  outline: none;
+}
+
+.uf-auth ::selection {
+  background: #e2dfff;
+  color: #30265d;
+}
+
+/* =========================================
+   RESPONSIVE: TABLETS
+========================================= */
+
+@media (max-width: 1050px) {
+  .uf-auth {
+    grid-template-columns: minmax(0, 0.9fr) minmax(400px, 1.1fr);
+  }
+
+  .uf-showcase {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  .uf-hero h1 {
+    font-size: clamp(43px, 5.2vw, 60px);
+    letter-spacing: -2.8px;
+  }
+
+  .uf-preview {
+    padding: 17px;
+  }
+
+  .uf-auth-main {
+    padding-right: 28px;
+    padding-left: 28px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE: MOBILE
+========================================= */
+
+@media (max-width: 760px) {
+  .uf-auth {
+    grid-template-columns: minmax(0, 1fr);
+    overflow: visible;
+  }
+
+  .uf-showcase {
+    min-height: auto;
+    padding: 24px 24px 28px;
+  }
+
+  .uf-brand__symbol {
+    width: 39px;
+    height: 39px;
+    border-radius: 12px;
+  }
+
+  .uf-brand__name {
+    font-size: 21px;
+  }
+
+  .uf-brand__edition {
+    font-size: 8px;
+  }
+
+  .uf-hero {
+    margin-top: 42px;
+  }
+
+  .uf-hero h1 {
+    margin-top: 20px;
+    font-size: clamp(46px, 10vw, 65px);
+    letter-spacing: -3px;
+  }
+
+  .uf-hero__description {
+    font-size: 13px;
+  }
+
+  .uf-benefits {
+    gap: 16px;
+    margin-top: 25px;
+  }
+
+  .uf-preview {
+    align-self: stretch;
+    max-width: none;
+    margin-top: 29px;
+  }
+
+  .uf-showcase__footer {
+    margin-top: 22px;
+    font-size: 7px;
+  }
+
+  .uf-auth-main {
+    min-height: auto;
+    padding: 20px 22px 24px;
+  }
+
+  .uf-auth-topbar {
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .uf-mobile-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: auto;
+    color: var(--uf-heading);
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+
+  .uf-mobile-brand__dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 3px;
+    background: var(--uf-primary);
+    box-shadow: 0 0 0 4px #efedff;
+  }
+
+  .uf-topbar-note {
+    font-size: 8px;
+    letter-spacing: 0.4px;
+  }
+
+  .uf-topbar-link {
+    padding: 8px 10px;
+    font-size: 10px;
+  }
+
+  .uf-auth-content {
+    max-width: 480px;
+    padding: 40px 0 32px;
+  }
+
+  .uf-auth-heading h2 {
+    font-size: 33px;
+  }
+
+  .uf-auth-footer {
+    margin-top: 0;
+    font-size: 7px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE: SMALL PHONES
+========================================= */
+
+@media (max-width: 390px) {
+  .uf-showcase {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .uf-auth-main {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .uf-brand__edition {
+    display: none;
+  }
+
+  .uf-hero h1 {
+    font-size: 45px;
+    letter-spacing: -2.5px;
+  }
+
+  .uf-preview__metrics {
+    gap: 8px;
+  }
+
+  .uf-metric {
+    padding: 10px;
+  }
+
+  .uf-form-panel {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .uf-auth-footer {
+    flex-wrap: wrap;
+  }
+
+  .uf-topbar-note {
+    display: none;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .uf-auth *,
+  .uf-auth *::before,
+  .uf-auth *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+
+/* =========================================
+   UNIFLOW — PASSWORD INPUT & EYE TOGGLE
+========================================= */
+
+.uf-auth .password-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+}
+
+.uf-auth .password-input > input.input {
+  width: 100%;
+  min-width: 0;
+  padding-right: 58px;
+}
+
+.uf-auth .password-input > input.input--invalid {
+  border-color: #e35d75;
+}
+
+.uf-auth .password-input > input.input--invalid:focus {
+  border-color: #e35d75;
+  box-shadow: 0 0 0 4px rgba(227, 93, 117, 0.10);
+}
+
+.uf-auth .password-input__toggle {
+  position: absolute;
+  top: 50%;
+  right: 7px;
+  z-index: 2;
+
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+
+  width: 38px;
+  height: 34px;
+  padding: 0;
+
+  border: 1px solid #e7e3fb;
+  border-radius: 10px;
+
+  background: #f5f3ff;
+  color: #7064d8;
+
+  box-shadow: 0 1px 3px rgba(55, 43, 115, 0.04);
+
+  cursor: pointer;
+  transform: translateY(-50%);
+
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+/* Override generic form button styles */
+.uf-auth .uf-form-panel .password-input__toggle {
+  width: 38px;
+  min-height: 34px;
+  padding: 0;
+
+  border: 1px solid #e7e3fb;
+  border-radius: 10px;
+
+  background: #f5f3ff;
+  color: #7064d8;
+
+  box-shadow: 0 1px 3px rgba(55, 43, 115, 0.04);
+  transform: translateY(-50%);
+}
+
+.uf-auth .password-input__toggle svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.uf-auth .password-input__toggle:hover,
+.uf-auth .uf-form-panel .password-input__toggle:hover {
+  border-color: #c8c1ff;
+  background: #eae7ff;
+  color: #493bd0;
+  box-shadow: 0 3px 10px rgba(81, 70, 229, 0.12);
+  transform: translateY(-50%);
+}
+
+.uf-auth .password-input__toggle:active,
+.uf-auth .uf-form-panel .password-input__toggle:active {
+  background: #dedaff;
+  box-shadow: none;
+}
+
+.uf-auth .password-input__toggle:focus-visible {
+  outline: 3px solid rgba(81, 70, 229, 0.22);
+  outline-offset: 2px;
+}
+
+/* Keep the toggle usable on touch screens */
+@media (max-width: 760px) {
+  .uf-auth .password-input__toggle {
+    width: 40px;
+    height: 36px;
+  }
+
+  .uf-auth .password-input > input.input {
+    padding-right: 60px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .uf-auth .password-input__toggle {
+    transition: none;
+  }
+}
+
+
